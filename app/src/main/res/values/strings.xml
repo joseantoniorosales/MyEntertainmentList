@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyEntertainmentList</string>
+
+    <string name="mail_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="add_button">Add</string>
+</resources>

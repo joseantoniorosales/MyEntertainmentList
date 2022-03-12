@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "251709118687",
+    "project_id": "myentertainmentlist-c256f",
+    "storage_bucket": "myentertainmentlist-c256f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251709118687:android:482f2a70169c3bcca2316a",
+        "android_client_info": {
+          "package_name": "com.example.myentertainmentlist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251709118687-njvjb25duhbg9rqr9dr7ko1098qkqm1p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myentertainmentlist",
+            "certificate_hash": "d973d7d8c7b02c44c8a27b4589fed45197e57e78"
+          }
+        },
+        {
+          "client_id": "251709118687-d88fhk3aukgmgtufn5at5eaqr5fj3g0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMt4ntlV2WgrtKQbaBfrPoOJwWcwSHJos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251709118687-d88fhk3aukgmgtufn5at5eaqr5fj3g0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
