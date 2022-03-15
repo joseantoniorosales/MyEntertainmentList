@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myentertainmentlist.databinding.ActivityMainBinding
+import com.example.myentertainmentlist.lists.BookListActivity
+import com.example.myentertainmentlist.lists.GameListActivity
 import com.example.myentertainmentlist.lists.TVListActivity
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +20,18 @@ class MainActivity : AppCompatActivity() {
         binding.watchBut.setOnClickListener {
 
             val intent: Intent = Intent(this, TVListActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.gameBut.setOnClickListener {
+
+            val intent: Intent = Intent(this, GameListActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bookBut.setOnClickListener {
+
+            val intent: Intent = Intent(this, BookListActivity::class.java)
             startActivity(intent)
         }
     }

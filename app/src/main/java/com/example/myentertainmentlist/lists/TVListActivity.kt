@@ -61,8 +61,6 @@ class TVListActivity : AppCompatActivity() {
 
                 R.id.editMenu -> {
 
-                    db.getEntertainmentDao().insertSerie(serie)
-
 
                 }
 
