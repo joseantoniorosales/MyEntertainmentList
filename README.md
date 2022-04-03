@@ -28,5 +28,5 @@ Al hacer un toque sencillo sobre cualquier elemento, se abrirá una ventana most
 
 ### MENU Y FRAGMENTOS
 
-Desde el menu de aplicación será posible cerrar la sesión y, mediante el uso de fragmentos, se podrá acceder a la pantalla de selección de listas y a la lista de favoritos.
+Desde el menu de aplicación será posible cerrar la sesión y acceder a las instrucciones de uso de la app. Mediante el uso de fragmentos, se podrá acceder a la pantalla de selección de listas y a la lista de favoritos.
 
