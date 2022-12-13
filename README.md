@@ -1,10 +1,9 @@
 # MyEntertainmentList
 
-## INTRODUCCIÓN
+## INTRODUCCIÓN/OBJETIVOS DE LA APLICACIÓN
 
-MyEntertainmentList es una aplicación creada en Android nativo que permitirá al usuario almacenar información sobre aquellos libros, videojuegos o series que tiene pendiente o aquellos que ya haya completado y quiera ponerles una nota personal o añadirla a sus favoritos.
+MyEntertainmentList es una aplicación creada en Android nativo que permitirá a un usuario compartir una lista con datos sobre las series, videojuegos o libros que haya completado o este completando, pudiendo añadir una nota para discutir sobre ella con el resto de usuarios que pertenezcan a su grupo
 
-## ANTEPROYECTO
 
 ### LANDING PAGE/REGISTER PAGE
 
@@ -17,33 +16,37 @@ La aplicación se inicia con una ventana de login para que el usuario pueda intr
   </tr>
   <tr>
     <td>
-      <img src="MyEntertainmentListImages/LandingPage.png">
+      <img src="MyEntertainmentListReadmeImages/LoginPage.png">
     </td>  
     <td>
-      <img src="MyEntertainmentListImages/RegisterPage.png">
+      <img src="MyEntertainmentListReadmeImages/RegisterPage.png">
     </td>
   </tr>
 </table>
 
 
 
-### SELECTOR DE LISTA
+### HOMEPAGE
 
-Una vez realizado correctamente el login, será redireccionado a una sencilla ventana donde se seleccionará la lista a la que el usuario desee acceder.
+Una vez realizado correctamente el login, será redireccionado a una sencilla ventana donde el usuario decidirá crear su propio grupo o, en su defecto, unirse a uno (siempre y cuando un administrador le haya asignado a alguno previamente).
 
 <table>
   <tr>
-    <td>Selección de lista
+    <td>Pantalla de selección</td>
+    <td>Pantalla de creación de grupo</td>
   </tr>
   <tr>
     <td>
-      <img src="MyEntertainmentListImages/SelectorPage.png">
+      <img src="MyEntertainmentListReadmeImages/HomePage.png">
+    </td>  
+    <td>
+      <img src="MyEntertainmentListReadmeImages/GroupCreatorPage.png">
     </td>
   </tr>
 </table>
 
 
-### LISTAS
+### LISTAS (FRAGMENTOS)
 
 Cada lista cuenta con una estructura similar, permitiendo la eliminación y la edición de los elementos por medio de un menu contextual y la incorporación de nuevos elementos por medio de un botón flotante.
 
@@ -65,31 +68,4 @@ Cada lista cuenta con una estructura similar, permitiendo la eliminación y la e
     </td>
   </tr>
 </table>
-
- 
-
-### EDIT PAGE/ADD PAGE
-
-Ambas ventanas serán iguales, con la diferencia de que la ventana para editar elementos tendrá todos los campos rellenos con la información previamente establecida.
-
-<table>
-  <tr>
-    <td>Selección de lista
-  </tr>
-  <tr>
-    <td>
-      <img src="MyEntertainmentListImages/AddPage.png">
-    </td>
-  </tr>
-</table>
-
-
-
-### VIEW PAGE
-
-Al hacer un toque sencillo sobre cualquier elemento, se abrirá una ventana mostrando la información completa de dicho elemento.
-
-### MENU Y FRAGMENTOS
-
-Desde el menu de aplicación será posible cerrar la sesión y acceder a las instrucciones de uso de la app. Mediante el uso de fragmentos, se podrá acceder a la pantalla de selección de listas y a la lista de favoritos.
 
