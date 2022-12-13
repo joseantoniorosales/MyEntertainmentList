@@ -48,7 +48,7 @@ Una vez realizado correctamente el login, será redireccionado a una sencilla ve
 
 ### LISTAS (FRAGMENTOS)
 
-Cada lista cuenta con una estructura similar, permitiendo la eliminación y la edición de los elementos por medio de un menu contextual y la incorporación de nuevos elementos por medio de un botón flotante.
+Cada lista cuenta con una estructura similar, permitiendo la eliminación y la edición de los elementos por medio de un menu contextual y la incorporación de nuevos elementos por medio de un botón flotante, además de una cuarta lista donde se podrán visualizar a los usuarios dentro del grupo, asi como si tienen permisos de administrador.
 
 <table>
   <tr>
