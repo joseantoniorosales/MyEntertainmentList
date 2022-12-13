@@ -12,6 +12,10 @@
 
     <color name="green">#3a7840</color>
     <color name="blue">#3e5f82</color>
+    <color name="lightBlue">#69E1E1</color>
     <color name="orange">#c78d42</color>
     <color name="grey">#7e807f</color>
+    <color name="textBox">#262727</color>
+    <color name="lightGray">#BCB9B9</color>
+    <color name="violet">#443165</color>
 </resources>

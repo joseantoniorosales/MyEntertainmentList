@@ -1,7 +1,19 @@
 <resources>
     <string name="app_name">MyEntertainmentList</string>
 
+    <!-- Short Strings -->
     <string name="mail_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="add_button">Add</string>
+
+    <!-- Long Strings -->
+    <string name="createUser_loading">User being created, please wait</string>
+    <string name="register_fail">Something went wrong, try another email</string>
+    <string name="image_select_waring">Please select an image</string>
+    <string name="pw_error">The password must be longer</string>
+    <string name="fields_unfilled">Please fill all the fields</string>
+
+    <!-- Shared Preferences -->
+    <string name="prefs_file" translatable="false">com.example.myentertainmentlist.PREFERENCE_FILE_KEY</string>
+
 </resources>

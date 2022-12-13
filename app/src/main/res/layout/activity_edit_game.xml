@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    tools:context=".EditGameActivity">
+
+
+    <TextView
+        android:id="@+id/EditGameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EDIT GAME"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/gameImageEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditGameText"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/gameStatusEditOutline"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:hint="Status"
+        android:layout_marginTop="60dp"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/textBox"
+        app:layout_constraintBottom_toTopOf="@+id/gameTitleEditOutline"
+        app:layout_constraintStart_toEndOf="@+id/gameImageEdit"
+        app:layout_constraintTop_toBottomOf="@+id/EditGameText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/gameStatusEditInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/gameTitleEditOutline"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Title"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/textBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameImageEdit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/gameTitleEditInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/gamePlatformEditOutline"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="Platform"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/textBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameTitleEditOutline">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/gamePlatformEditInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/gameGenreEditOutline"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="Genre"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/textBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gamePlatformEditOutline">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/gameGenreEditInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/gameRatingEditOutline"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+
+        android:hint="Rating"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/textBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameGenreEditOutline">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/gameRatingEditInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/butSaveEditGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:width="300dp"
+        android:backgroundTint="@color/green"
+        android:text="SAVE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameRatingEditOutline" />
+
+    <Button
+        android:id="@+id/butCancelEditGame"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="CANCEL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butSaveEditGame" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHANGE PHOTO"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintStart_toEndOf="@+id/gameImageEdit"
+        app:layout_constraintTop_toTopOf="@+id/gameImageEdit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myentertainmentlist">
+    <!-- Internet Enabled -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,6 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyEntertainmentList">
+        <activity
+            android:name=".UserFragment"
+            android:exported="false" />
+        <activity
+            android:name=".EditGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GameFragment"
+            android:exported="false" />
+        <activity
+            android:name=".GroupCreatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GameViewActivity"
+            android:exported="false" />
         <activity
             android:name=".TVViewActivity"
             android:exported="false" />
@@ -28,7 +48,7 @@
             android:name=".ListSelectActivity"
             android:exported="false" />
         <activity
-            android:name=".Signing.LandingActivity"
+            android:name=".Signing.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

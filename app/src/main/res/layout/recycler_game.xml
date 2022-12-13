@@ -3,67 +3,114 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/cardview_dark_background">
+    android:layout_height="150dp"
+    android:layout_marginTop="5dp"
+    android:background="@color/blue">
 
     <ImageView
-        android:id="@+id/gameImage"
-        android:layout_width="375px"
-        android:layout_height="675px"
+        android:id="@+id/gamePortrait"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/gameTitle"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Title"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="TextView"
         android:textColor="@color/white"
-        android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/gameImage"
+        android:textSize="30dp"
+        app:layout_constraintStart_toEndOf="@+id/gamePortrait"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/genreText"
-        android:layout_width="200dp"
+        android:id="@+id/gamePlatform"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Genre"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="10dp"
+        android:text="TextView"
+        android:textColor="@color/lightBlue"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gameTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gameGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="TextView"
         android:textColor="@color/white"
-        android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/gameImage"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/gamePortrait"
         app:layout_constraintTop_toBottomOf="@+id/gameTitle" />
 
-    <TextView
-        android:id="@+id/companyText"
-        android:layout_width="200dp"
+    <!--<TextView
+        android:id="@+id/gameStatus"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Developer"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="TextView"
         android:textColor="@color/white"
-        android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/gameImage"
-        app:layout_constraintTop_toBottomOf="@+id/genreText" />
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/gamePortrait"
+        app:layout_constraintTop_toBottomOf="@+id/gameGenre" /> -->
 
     <TextView
-        android:id="@+id/Platforms"
-        android:layout_width="200dp"
+        android:id="@+id/gameRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gamePortrait" />
+
+    <TextView
+        android:id="@+id/gameRatingNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gameRating" />
+
+    <!-- <TextView
+         android:id="@+id/gameStatusCheck"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="10dp"
+         android:layout_marginBottom="5dp"
+         android:text="TextView"
+         android:textColor="@color/white"
+         android:textSize="20dp"
+         app:layout_constraintBottom_toTopOf="@+id/gameRatingNum"
+         app:layout_constraintStart_toEndOf="@+id/gameStatus" /> -->
+
+    <CheckBox
+        android:id="@+id/gameStatusCheck"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Platforms"
+        android:layout_marginRight="10dp"
+        android:checked="false"
+        android:text="Completed"
         android:textColor="@color/white"
-        android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/gameImage"
-        app:layout_constraintTop_toBottomOf="@+id/companyText" />
-
-    <ImageView
-        android:id="@+id/statusView"
-        android:layout_width="75px"
-        android:layout_height="675px"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/watch_status_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/gamePlatform" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

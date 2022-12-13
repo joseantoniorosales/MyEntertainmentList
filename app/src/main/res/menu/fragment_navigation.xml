@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/bookFragment"
+        android:icon="@drawable/book"
+        android:title="Books" />
+
+    <item
+        android:id="@+id/gameFragment"
+        android:icon="@drawable/gamepad"
+        android:title="Games" />
+
+    <item
+        android:id="@+id/TVFragment"
+        android:icon="@drawable/tv"
+        android:title="TV" />
+
+    <item
+        android:id="@+id/UserFragment"
+        android:icon="@drawable/users_icon"
+        android:title="Users" />
+</menu>

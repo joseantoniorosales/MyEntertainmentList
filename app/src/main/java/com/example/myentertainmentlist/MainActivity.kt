@@ -1,40 +1,67 @@
 package com.example.myentertainmentlist
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.myentertainmentlist.databinding.ActivityMainBinding
-import com.example.myentertainmentlist.lists.BookListActivity
-import com.example.myentertainmentlist.lists.GameListActivity
-import com.example.myentertainmentlist.lists.TVListActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    //TODO private val BookFragment
+
+    private val GameFragment = GameFragment()
+
+    //TODO private val TVFragment
+
+    private val UserFragment = UserFragment()
 
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.watchBut.setOnClickListener {
+        val fragmentNavigationView = findViewById<BottomNavigationView>(R.id.fragmentNavigation)
 
-            val intent: Intent = Intent(this, TVListActivity::class.java)
-            startActivity(intent)
-        }
+        changeFragment(GameFragment)
 
-        binding.gameBut.setOnClickListener {
+        fragmentNavigationView.selectedItemId = R.id.gameFragment
 
-            val intent: Intent = Intent(this, GameListActivity::class.java)
-            startActivity(intent)
-        }
+        fragmentNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
 
-        binding.bookBut.setOnClickListener {
+                /*TODO R.id.bookFragment -> {
+                    changeFragment(BookFragment)
+                    item.title */
 
-            val intent: Intent = Intent(this, BookListActivity::class.java)
-            startActivity(intent)
+                R.id.gameFragment -> {
+                    changeFragment(GameFragment)
+                    item.title
+                }
+
+                /*TODO R.id.tvFragment -> {
+                    changeFragment(TVFragment)
+                    item.title
+                } */
+
+                R.id.UserFragment -> {
+                    changeFragment(UserFragment)
+                    item.title
+                }
+            }
+            true
         }
     }
 
-    override fun onBackPressed() {}
+
+    //override fun onBackPressed() {}
+
+    internal fun changeFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frameContainer, fragment)
+        transaction.commit()
+    }
 }
