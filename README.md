@@ -5,7 +5,7 @@
 MyEntertainmentList es una aplicación creada en Android nativo que permitirá a un usuario compartir una lista con datos sobre las series, videojuegos o libros que haya completado o este completando, pudiendo añadir una nota para discutir sobre ella con el resto de usuarios que pertenezcan a su grupo
 
 
-### LANDING PAGE/REGISTER PAGE
+### LOGIN PAGE/REGISTER PAGE
 
 La aplicación se inicia con una ventana de login para que el usuario pueda introducir sus datos y acceder a su cuenta. También cuenta con un botón que permitirá acceder a la ventana de registro.
 
