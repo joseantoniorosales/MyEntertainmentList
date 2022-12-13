@@ -55,6 +55,7 @@ Cada lista cuenta con una estructura similar, permitiendo la eliminación y la e
     <td>BookList</td>
     <td>GameList</td>
     <td>WatchList</td>
+    <td>UserList</td>
   </tr>
   <tr>
     <td>
@@ -65,6 +66,9 @@ Cada lista cuenta con una estructura similar, permitiendo la eliminación y la e
     </td>
     <td>
       <img src="MyEntertainmentListImages/WatchList.png">
+    </td>
+    <td>
+      <img src="MyEntertainmentListReadmeImages/UserFragment.png">
     </td>
   </tr>
 </table>
