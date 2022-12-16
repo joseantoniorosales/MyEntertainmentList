@@ -3,16 +3,17 @@ package com.example.myentertainmentlist
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.myentertainmentlist.Entities.Book
 import com.example.myentertainmentlist.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    //TODO private val BookFragment
+    private val BookFragment = BookFragment()
 
     private val GameFragment = GameFragment()
 
-    //TODO private val TVFragment
+    private val TVFragment = TVFragment()
 
     private val UserFragment = UserFragment()
 
@@ -33,19 +34,21 @@ class MainActivity : AppCompatActivity() {
         fragmentNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
 
-                /*TODO R.id.bookFragment -> {
+                R.id.bookFragment -> {
                     changeFragment(BookFragment)
-                    item.title */
+                    item.title
+                }
 
                 R.id.gameFragment -> {
                     changeFragment(GameFragment)
                     item.title
                 }
 
-                /*TODO R.id.tvFragment -> {
+                R.id.TVFragment -> {
                     changeFragment(TVFragment)
                     item.title
-                } */
+                }
+
 
                 R.id.UserFragment -> {
                     changeFragment(UserFragment)

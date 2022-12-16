@@ -12,10 +12,10 @@ import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myentertainmentlist.Entities.Book
 import com.example.myentertainmentlist.Signing.LoginActivity
-import com.example.myentertainmentlist.adapters.GameAdapter
-import com.example.myentertainmentlist.Entities.Game
-import com.example.myentertainmentlist.databinding.GameFragmentBinding
+import com.example.myentertainmentlist.adapters.BookAdapter
+import com.example.myentertainmentlist.databinding.ActivityBookFragmentBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -25,35 +25,36 @@ import com.google.firebase.firestore.EventListener
 import com.google.firebase.ktx.Firebase
 import java.util.*
 
-class GameFragment : Fragment() {
+class BookFragment : Fragment() {
 
-    // Firebase variables
+    //Firebase variables
     private lateinit var db: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
 
-    //list of games
-    private lateinit var gameList: ArrayList<Game>
+    //list of books
+    private lateinit var bookList: ArrayList<Book>
 
     // Adapter
-    private lateinit var gameShowAdapter: GameAdapter
+    private lateinit var bookShowAdapter: BookAdapter
 
     // Fragments variables
-    private var bindingFrag: GameFragmentBinding? = null
+    private var bindingFrag: ActivityBookFragmentBinding? = null
     private val binding get() = bindingFrag!!
 
-    // Game info variables
-    private lateinit var gameTitle: String
-    private lateinit var gamePlatform: String
-    private lateinit var gameRating: String
-    private lateinit var gameGenre: String
-    private var gameStatus: Boolean? = null
+    // book info variables
+    private lateinit var bookTitle: String
+    private lateinit var bookAuthor: String
+    private lateinit var bookRating: String
+    private lateinit var bookGenre: String
+    private var bookStatus: Boolean? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        bindingFrag = GameFragmentBinding.inflate(inflater, container, false)
+
+        bindingFrag = ActivityBookFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -70,44 +71,44 @@ class GameFragment : Fragment() {
 
         auth = Firebase.auth
 
-        gameList = arrayListOf()
+        bookList = arrayListOf()
 
-        gameShowAdapter = GameAdapter(gameList, activity as Context)
+        bookShowAdapter = BookAdapter(bookList, activity as Context)
 
-        binding.GameRecycler.apply {
+        binding.bookRecycler.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             setHasFixedSize(true)
-            adapter = gameShowAdapter
+            adapter = bookShowAdapter
         }
 
 
-        binding.GameAddBut.setOnClickListener {
+        binding.bookAddBut.setOnClickListener {
 
             db.collection("users").document(email as String).get().addOnSuccessListener {
 
                 if (it.get("groupAdmin") == true) {
 
-                    val gameDialog: View =
-                        layoutInflater.inflate(R.layout.creategame_dialog, binding.root, false)
+                    val bookDialog: View =
+                        layoutInflater.inflate(R.layout.createbook_dialog, binding.root, false)
 
-                    gameDialog.removeDialog()
+                    bookDialog.removeDialog()
 
                     MaterialAlertDialogBuilder(context as Context)
-                        .setView(gameDialog)
-                        .setTitle("Create game")
+                        .setView(bookDialog)
+                        .setTitle("Create book")
                         .setNegativeButton("Cancel") { dialog, which ->
                         }
 
                         .setPositiveButton("Create") { dialog, which ->
-                            //gameTitle = gameDialog.newGameInput
+                            //bookTitle = bookDialog
 
-                            createGame(groupId)
+                            createBook(groupId)
                         }
                         .show()
                 } else {
                     Snackbar.make(
                         view,
-                        "Only admins can create games",
+                        "Only admins can create books",
                         Snackbar.LENGTH_LONG
                     ).show()
                 }
@@ -115,9 +116,9 @@ class GameFragment : Fragment() {
         }
         addDb()
 
-        binding.GameMenuBut.setOnClickListener {
+        binding.bookMenuBut.setOnClickListener {
 
-            ShowMenu(binding.GameMenuBut)
+            ShowMenu(binding.bookMenuBut)
         }
     }
 
@@ -130,7 +131,7 @@ class GameFragment : Fragment() {
 
         val groupID = prefs?.getString("group", "")
 
-        db.collection("games").whereEqualTo("groupID", groupID)
+        db.collection("books").whereEqualTo("groupID", groupID)
             .addSnapshotListener(object : EventListener<QuerySnapshot> {
 
                 override fun onEvent(
@@ -147,29 +148,29 @@ class GameFragment : Fragment() {
                     for (dc: DocumentChange in value?.documentChanges!!) {
 
                         if (dc.type == DocumentChange.Type.ADDED) {
-                            var game = dc.document.toObject(Game::class.java)
-                            game.idGame = dc.document.id
+                            var book = dc.document.toObject(Book::class.java)
+                            book.idBook = dc.document.id
 
-                            if (gameList.indexOf(game) == -1) {
-                                gameList.add(game)
-                                gameShowAdapter.notifyItemInserted(gameList.size)
+                            if (bookList.indexOf(book) == -1) {
+                                bookList.add(book)
+                                bookShowAdapter.notifyItemInserted(bookList.size)
                             }
                         }
 
-                        //IF GAME EDITED
+                        //IF BOOK EDITED
                         if (dc.type == DocumentChange.Type.MODIFIED) {
 
-                            var newGame = dc.document.toObject(Game::class.java)
-                            newGame.idGame = dc.document.id
+                            var newBook = dc.document.toObject(Book::class.java)
+                            newBook.idBook = dc.document.id
 
                             var position: Int = 0
-                            for (game in gameList) {
+                            for (book in bookList) {
 
-                                if (game.idGame == dc.document.id) {
-                                    position = gameList.indexOf(game)
-                                    gameList[position] = newGame
-                                    gameShowAdapter.notifyItemChanged(position)
-                                    gameShowAdapter.notifyDataSetChanged()
+                                if (book.idBook == dc.document.id) {
+                                    position = bookList.indexOf(book)
+                                    bookList[position] = newBook
+                                    bookShowAdapter.notifyItemChanged(position)
+                                    bookShowAdapter.notifyDataSetChanged()
                                 }
                             }
                         }
@@ -196,8 +197,10 @@ class GameFragment : Fragment() {
                     activity?.finish()
                 }
             }
+
             true
         }
+
         menuShow.show()
     }
 
@@ -214,31 +217,31 @@ class GameFragment : Fragment() {
         parentView.removeView(this)
     }
 
-    private fun createGame(groupId: String?) {
+    private fun createBook(groupId: String?) {
 
-        var gameId = UUID.randomUUID().toString()
+        var bookId = UUID.randomUUID().toString()
 
-        if (gameTitle != "") {
-            db.collection("games").document(gameId).set(
+        if (bookTitle != "") {
+            db.collection("books").document(bookId).set(
                 hashMapOf(
-                    "gameId" to gameId,
-                    "title" to gameTitle,
-                    "platform" to gamePlatform,
-                    "genre" to gameGenre,
-                    "status" to gameStatus,
-                    "rating" to gameRating,
+                    "bookId" to bookId,
+                    "title" to bookTitle,
+                    "author" to bookAuthor,
+                    "genre" to bookGenre,
+                    "status" to bookStatus,
+                    "rating" to bookRating,
                     "group" to groupId
                 )
             ).addOnSuccessListener {
                 Toast.makeText(
                     context,
-                    "Game Successfully created",
+                    "book Successfully created",
                     Toast.LENGTH_LONG
                 ).show()
             }
 
         } else {
-            Toast.makeText(context, "Game failed to be created", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "book failed to be created", Toast.LENGTH_LONG).show()
 
         }
     }

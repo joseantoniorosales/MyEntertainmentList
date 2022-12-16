@@ -52,43 +52,43 @@ class EditGameActivity : AppCompatActivity() {
 
     }
 
-    /*
-        private fun callCamera() {
-            pickerDialog {
-                setTitle("Select from: ")
-                setTitleTextSize(20f)
-                setTitleTextBold(true)
-                setTitleGravity(Gravity.START)
-                setItems(
-                    setOf(
-                        ItemModel(
-                            ItemType.Camera,
-                            itemBackgroundColor = Color.rgb(37, 150, 190)
-                        ),
-                        ItemModel(
-                            ItemType.ImageGallery(MimeType.Image.All)
-                        ),
-                    )
+
+    private fun LaunchCamera() {
+        pickerDialog {
+            setTitle("Select from: ")
+            setTitleTextSize(20f)
+            setTitleTextBold(true)
+            setTitleGravity(Gravity.START)
+            setItems(
+                setOf(
+                    ItemModel(
+                        ItemType.Camera,
+                        itemBackgroundColor = Color.rgb(37, 150, 190)
+                    ),
+                    ItemModel(
+                        ItemType.ImageGallery(MimeType.Image.All)
+                    ),
                 )
+            )
 
-                setListType(PickerDialog.ListType.TYPE_LIST)
-            }.setPickerCloseListener { type, uris ->
-                when (type) {
-                    ItemType.Camera -> setChoosenImg(uris.first())
-                    is ItemType.ImageGallery -> {
-                        setChoosenImg(uris.first())
-                    }
-                    else -> {}
+            setListType(PickerDialog.ListType.TYPE_LIST)
+        }.setPickerCloseListener { type, uris ->
+            when (type) {
+                ItemType.Camera -> setChoosenImg(uris.first())
+                is ItemType.ImageGallery -> {
+                    setChoosenImg(uris.first())
                 }
-            }.show()
-        }
+                else -> {}
+            }
+        }.show()
+    }
 
-        private fun setChoosenImg(uri: Uri) {
+    private fun setChoosenImg(uri: Uri) {
 
-            gamePhoto = uri
-            binding.gameImageEdit.setImageURI(gamePhoto)
-        }
-    */
+        gamePhoto = uri
+        binding.gameImageEdit.setImageURI(gamePhoto)
+    }
+
     override fun onBackPressed() {}
 
     private fun updateGame(groupId: String?, view: View) {
@@ -103,6 +103,7 @@ class EditGameActivity : AppCompatActivity() {
                 .set(
                     hashMapOf(
                         "gameId" to gameId,
+                        "groupId" to groupId,
                         "gameTitle" to gameTitleEdit,
                         "gamePlatform" to gamePlatformEdit,
                         "gameGenre" to gameGenreEdit,

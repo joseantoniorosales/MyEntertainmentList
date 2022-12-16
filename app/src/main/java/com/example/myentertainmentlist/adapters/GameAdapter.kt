@@ -2,21 +2,18 @@ package com.example.myentertainmentlist.adapters
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.view.*
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.myentertainmentlist.EditGameActivity
 import com.example.myentertainmentlist.R
 import com.example.myentertainmentlist.databinding.RecyclerGameBinding
-import com.example.myentertainmentlist.room.Entities.Game
+import com.example.myentertainmentlist.Entities.Game
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 
 class GameAdapter(
     private val gameList: ArrayList<Game>,

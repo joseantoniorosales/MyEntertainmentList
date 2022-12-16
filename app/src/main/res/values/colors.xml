@@ -10,10 +10,12 @@
 
     <!-- My colors -->
 
-    <color name="green">#3a7840</color>
+    <color name="green">#234D27</color>
+    <color name="lightGreen">#5DCD68</color>
     <color name="blue">#3e5f82</color>
     <color name="lightBlue">#69E1E1</color>
-    <color name="orange">#c78d42</color>
+    <color name="orange">#98692B</color>
+    <color name="LightOrange">#EC9F3B</color>
     <color name="grey">#7e807f</color>
     <color name="textBox">#262727</color>
     <color name="lightGray">#BCB9B9</color>

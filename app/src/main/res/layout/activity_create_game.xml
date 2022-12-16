@@ -4,22 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_dark_background">
+    android:background="@color/black"
+    tools:context=".CreateGame">
+
+    <TextView
+        android:id="@+id/newGameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD GAME"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/newGameImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newGameText"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/newGameStatusOutline"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:hint="Status"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/textBox"
+        app:layout_constraintBottom_toTopOf="@+id/newGameTitleOutline"
+        app:layout_constraintStart_toEndOf="@+id/newGameImage"
+        app:layout_constraintTop_toBottomOf="@+id/newGameText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/newGameStatusInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/newGameTitleOutline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
-
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:hint="Title"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="@color/textBox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/newGameImage">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/newGameTitleInput"
@@ -30,18 +73,16 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/newGamePlatformOutline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:hint="Platform"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="@color/textBox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newGameTitleOutline">
 
@@ -51,21 +92,18 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white" />
 
-
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/newGameGenreOutline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:hint="Genre"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="@color/textBox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newGamePlatformOutline">
 
@@ -75,21 +113,19 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white" />
 
-
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/newGameRatingOutline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
+
         android:hint="Rating"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="@color/textBox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newGameGenreOutline">
 
@@ -99,31 +135,39 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white" />
 
-
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        android:id="@+id/butSaveNewGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:width="300dp"
+        android:backgroundTint="@color/green"
+        android:text="SAVE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newGameRatingOutline" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/newGameStatusOutline"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <Button
+        android:id="@+id/butCancelNewGame"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Status"
-        android:textColorHint="@color/white"
-        app:boxBackgroundColor="@color/textBox"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="CANCEL"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newGameRatingOutline">
+        app:layout_constraintTop_toBottomOf="@+id/butSaveNewGame" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/newGameStatusInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white" />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/SelectNewImgBut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="@color/blue"
+        android:text="CHANGE PHOTO"
+        app:layout_constraintStart_toEndOf="@+id/newGameImage"
+        app:layout_constraintTop_toTopOf="@+id/newGameImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

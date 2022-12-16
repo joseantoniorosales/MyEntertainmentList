@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyEntertainmentList">
         <activity
+            android:name=".EditTvActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TVFragment"
+            android:exported="false" />
+        <activity
+            android:name=".BookFragment"
+            android:exported="false" />
+        <activity
+            android:name=".CreateGame"
+            android:exported="false" />
+        <activity
             android:name=".UserFragment"
             android:exported="false" />
         <activity

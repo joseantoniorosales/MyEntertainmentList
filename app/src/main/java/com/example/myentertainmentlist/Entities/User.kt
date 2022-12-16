@@ -1,9 +1,4 @@
-package com.example.myentertainmentlist.room.Entities
-
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import java.io.Serializable
+package com.example.myentertainmentlist.Entities
 
 data class User( var email: String = "",
                  var username: String = "",

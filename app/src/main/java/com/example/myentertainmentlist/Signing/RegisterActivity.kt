@@ -39,11 +39,11 @@ class RegisterActivity : AppCompatActivity() {
         binding.signUpBut.setOnClickListener { register(it) }
 
         // Camera button
-        binding.PhotoBut.setOnClickListener { camera() }
+        binding.PhotoBut.setOnClickListener { LaunchCamera() }
     }
 
 
-    private fun camera() {
+    private fun LaunchCamera() {
         pickerDialog {
             setTitle("Select from: ")
             setTitleTextSize(20f)

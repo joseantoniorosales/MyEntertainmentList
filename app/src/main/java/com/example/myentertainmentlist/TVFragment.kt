@@ -12,10 +12,10 @@ import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myentertainmentlist.Entities.TV
 import com.example.myentertainmentlist.Signing.LoginActivity
-import com.example.myentertainmentlist.adapters.GameAdapter
-import com.example.myentertainmentlist.Entities.Game
-import com.example.myentertainmentlist.databinding.GameFragmentBinding
+import com.example.myentertainmentlist.adapters.TVAdapter
+import com.example.myentertainmentlist.databinding.ActivityTvfragmentBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -25,35 +25,37 @@ import com.google.firebase.firestore.EventListener
 import com.google.firebase.ktx.Firebase
 import java.util.*
 
-class GameFragment : Fragment() {
+class TVFragment : Fragment() {
 
-    // Firebase variables
+
+    //Firebase variables
     private lateinit var db: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
 
-    //list of games
-    private lateinit var gameList: ArrayList<Game>
+    //list of Tv objects
+    private lateinit var tvList: ArrayList<TV>
 
     // Adapter
-    private lateinit var gameShowAdapter: GameAdapter
+    private lateinit var tvShowAdapter: TVAdapter
 
     // Fragments variables
-    private var bindingFrag: GameFragmentBinding? = null
+    private var bindingFrag: ActivityTvfragmentBinding? = null
     private val binding get() = bindingFrag!!
 
-    // Game info variables
-    private lateinit var gameTitle: String
-    private lateinit var gamePlatform: String
-    private lateinit var gameRating: String
-    private lateinit var gameGenre: String
-    private var gameStatus: Boolean? = null
+    // tv info variables
+    private lateinit var tvTitle: String
+    private lateinit var tvPlatform: String
+    private lateinit var tvRating: String
+    private lateinit var tvGenre: String
+    private var tvStatus: Boolean? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        bindingFrag = GameFragmentBinding.inflate(inflater, container, false)
+
+        bindingFrag = ActivityTvfragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -70,44 +72,44 @@ class GameFragment : Fragment() {
 
         auth = Firebase.auth
 
-        gameList = arrayListOf()
+        tvList = arrayListOf()
 
-        gameShowAdapter = GameAdapter(gameList, activity as Context)
+        tvShowAdapter = TVAdapter(tvList, activity as Context)
 
-        binding.GameRecycler.apply {
+        binding.tvRecycler.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             setHasFixedSize(true)
-            adapter = gameShowAdapter
+            adapter = tvShowAdapter
         }
 
 
-        binding.GameAddBut.setOnClickListener {
+        binding.tvAddBut.setOnClickListener {
 
             db.collection("users").document(email as String).get().addOnSuccessListener {
 
                 if (it.get("groupAdmin") == true) {
 
-                    val gameDialog: View =
-                        layoutInflater.inflate(R.layout.creategame_dialog, binding.root, false)
+                    val tvDialog: View =
+                        layoutInflater.inflate(R.layout.createtv_dialog, binding.root, false)
 
-                    gameDialog.removeDialog()
+                    tvDialog.removeDialog()
 
                     MaterialAlertDialogBuilder(context as Context)
-                        .setView(gameDialog)
-                        .setTitle("Create game")
+                        .setView(tvDialog)
+                        .setTitle("Create TV object")
                         .setNegativeButton("Cancel") { dialog, which ->
                         }
 
                         .setPositiveButton("Create") { dialog, which ->
-                            //gameTitle = gameDialog.newGameInput
+                            //tvTitle = tvDialog
 
-                            createGame(groupId)
+                            CreateTV(groupId)
                         }
                         .show()
                 } else {
                     Snackbar.make(
                         view,
-                        "Only admins can create games",
+                        "Only admins can create tvs",
                         Snackbar.LENGTH_LONG
                     ).show()
                 }
@@ -115,9 +117,9 @@ class GameFragment : Fragment() {
         }
         addDb()
 
-        binding.GameMenuBut.setOnClickListener {
+        binding.tvMenuBut.setOnClickListener {
 
-            ShowMenu(binding.GameMenuBut)
+            ShowMenu(binding.tvMenuBut)
         }
     }
 
@@ -130,7 +132,7 @@ class GameFragment : Fragment() {
 
         val groupID = prefs?.getString("group", "")
 
-        db.collection("games").whereEqualTo("groupID", groupID)
+        db.collection("tvObjects").whereEqualTo("groupID", groupID)
             .addSnapshotListener(object : EventListener<QuerySnapshot> {
 
                 override fun onEvent(
@@ -147,29 +149,29 @@ class GameFragment : Fragment() {
                     for (dc: DocumentChange in value?.documentChanges!!) {
 
                         if (dc.type == DocumentChange.Type.ADDED) {
-                            var game = dc.document.toObject(Game::class.java)
-                            game.idGame = dc.document.id
+                            var tv = dc.document.toObject(TV::class.java)
+                            tv.idTV = dc.document.id
 
-                            if (gameList.indexOf(game) == -1) {
-                                gameList.add(game)
-                                gameShowAdapter.notifyItemInserted(gameList.size)
+                            if (tvList.indexOf(tv) == -1) {
+                                tvList.add(tv)
+                                tvShowAdapter.notifyItemInserted(tvList.size)
                             }
                         }
 
-                        //IF GAME EDITED
+                        //IF tv EDITED
                         if (dc.type == DocumentChange.Type.MODIFIED) {
 
-                            var newGame = dc.document.toObject(Game::class.java)
-                            newGame.idGame = dc.document.id
+                            var newtv = dc.document.toObject(TV::class.java)
+                            newtv.idTV = dc.document.id
 
                             var position: Int = 0
-                            for (game in gameList) {
+                            for (tv in tvList) {
 
-                                if (game.idGame == dc.document.id) {
-                                    position = gameList.indexOf(game)
-                                    gameList[position] = newGame
-                                    gameShowAdapter.notifyItemChanged(position)
-                                    gameShowAdapter.notifyDataSetChanged()
+                                if (tv.idTV == dc.document.id) {
+                                    position = tvList.indexOf(tv)
+                                    tvList[position] = newtv
+                                    tvShowAdapter.notifyItemChanged(position)
+                                    tvShowAdapter.notifyDataSetChanged()
                                 }
                             }
                         }
@@ -196,8 +198,10 @@ class GameFragment : Fragment() {
                     activity?.finish()
                 }
             }
+
             true
         }
+
         menuShow.show()
     }
 
@@ -214,31 +218,31 @@ class GameFragment : Fragment() {
         parentView.removeView(this)
     }
 
-    private fun createGame(groupId: String?) {
+    private fun CreateTV(groupId: String?) {
 
-        var gameId = UUID.randomUUID().toString()
+        var tvId = UUID.randomUUID().toString()
 
-        if (gameTitle != "") {
-            db.collection("games").document(gameId).set(
+        if (tvTitle != "") {
+            db.collection("tvs").document(tvId).set(
                 hashMapOf(
-                    "gameId" to gameId,
-                    "title" to gameTitle,
-                    "platform" to gamePlatform,
-                    "genre" to gameGenre,
-                    "status" to gameStatus,
-                    "rating" to gameRating,
+                    "tvId" to tvId,
+                    "title" to tvTitle,
+                    "platform" to tvPlatform,
+                    "genre" to tvGenre,
+                    "status" to tvStatus,
+                    "rating" to tvRating,
                     "group" to groupId
                 )
             ).addOnSuccessListener {
                 Toast.makeText(
                     context,
-                    "Game Successfully created",
+                    "tv Successfully created",
                     Toast.LENGTH_LONG
                 ).show()
             }
 
         } else {
-            Toast.makeText(context, "Game failed to be created", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "tv failed to be created", Toast.LENGTH_LONG).show()
 
         }
     }

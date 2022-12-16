@@ -5,37 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".GameFragment">
+    tools:context=".TVFragment">
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/GameRecycler"
+        android:id="@+id/tvRecycler"
         android:layout_width="418dp"
         android:layout_height="676dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/recycler_game" />
+        tools:listitem="@layout/recycler_tv" />
 
     <TextView
-        android:id="@+id/GameText"
+        android:id="@+id/tvText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GAMELIST"
+        android:text="TVLIST"
         android:textColor="@color/white"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/GameRecycler"
+        app:layout_constraintBottom_toTopOf="@+id/tvRecycler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/GameAddBut"
+        android:id="@+id/tvAddBut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/lightBlue"
+        android:backgroundTint="@color/LightOrange"
         android:clickable="true"
         android:tintMode="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,13 +45,13 @@
         app:srcCompat="@drawable/game_add_icon" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/GameMenuBut"
+        android:id="@+id/tvMenuBut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
         android:clickable="true"
         android:tintMode="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/GameRecycler"
+        app:layout_constraintBottom_toTopOf="@+id/tvRecycler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:maxImageSize="40dp"

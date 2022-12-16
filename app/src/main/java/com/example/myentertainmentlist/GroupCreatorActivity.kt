@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myentertainmentlist.adapters.GroupCreatorAdapter
 import com.example.myentertainmentlist.databinding.ActivityGroupCreatorBinding
-import com.example.myentertainmentlist.room.Entities.User
+import com.example.myentertainmentlist.Entities.User
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
@@ -21,7 +21,7 @@ class GroupCreatorActivity : AppCompatActivity() {
     private lateinit var db: FirebaseFirestore
 
     //Recycler Variables
-    private lateinit var userList: ArrayList<com.example.myentertainmentlist.room.Entities.User>
+    private lateinit var userList: ArrayList<com.example.myentertainmentlist.Entities.User>
     private lateinit var groupCreatorAdapter: GroupCreatorAdapter
     private var groupCount: Int = 0
 

@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myentertainmentlist.R
 import com.example.myentertainmentlist.databinding.RecyclerUserGroupBinding
-import com.example.myentertainmentlist.room.Entities.User
-import com.google.android.material.switchmaterial.SwitchMaterial
+import com.example.myentertainmentlist.Entities.User
 
 class GroupCreatorAdapter(
     private val userList: ArrayList<User>,

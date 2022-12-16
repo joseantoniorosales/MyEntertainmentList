@@ -1,8 +1,4 @@
-package com.example.myentertainmentlist.room.Entities
-
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+package com.example.myentertainmentlist.Entities
 
 data class Game(
     var idGame: String = "",

@@ -5,14 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:background="@color/cardview_dark_background">
-
+    android:background="@color/orange">
 
     <ImageView
         android:id="@+id/TVPortrait"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,19 +24,22 @@
         android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="@color/white"
+        android:textSize="30dp"
         app:layout_constraintStart_toEndOf="@+id/TVPortrait"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/TVType"
+        android:id="@+id/TVPlatform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="10dp"
         android:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/TVPortrait"
-        app:layout_constraintTop_toBottomOf="@+id/TVTitle" />
+        android:textColor="@color/lightBlue"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/TVTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TVGenre"
@@ -48,29 +49,44 @@
         android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="@color/white"
+        android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/TVPortrait"
-        app:layout_constraintTop_toBottomOf="@+id/TVType" />
+        app:layout_constraintTop_toBottomOf="@+id/TVTitle" />
 
     <TextView
-        android:id="@+id/TVPlatform"
+        android:id="@+id/TVRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
         android:text="TextView"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/TVPortrait"
-        app:layout_constraintTop_toBottomOf="@+id/TVGenre" />
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TVPortrait" />
 
     <TextView
-        android:id="@+id/TVStatus"
+        android:id="@+id/TVRatingNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
         android:text="TextView"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/TVPortrait"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TVRating" />
+
+    <CheckBox
+        android:id="@+id/TVStatusCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:checked="false"
+        android:text="Completed"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TVPlatform" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

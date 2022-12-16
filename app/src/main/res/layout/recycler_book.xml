@@ -5,59 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:background="@color/cardview_dark_background">
+    android:background="@color/green">
 
     <ImageView
-        android:id="@+id/BookPortrait"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:id="@+id/bookPortrait"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/BookTitle"
+        android:id="@+id/bookTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/BookPortrait"
+        android:textSize="30dp"
+        app:layout_constraintStart_toEndOf="@+id/bookPortrait"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/BookType"
+        android:id="@+id/bookAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="10dp"
         android:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/BookPortrait"
-        app:layout_constraintTop_toBottomOf="@+id/BookTitle" />
+        android:textColor="@color/lightBlue"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bookTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/BookGenre"
+        android:id="@+id/bookGenre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/BookPortrait"
-        app:layout_constraintTop_toBottomOf="@+id/BookType" />
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/bookPortrait"
+        app:layout_constraintTop_toBottomOf="@+id/bookTitle" />
 
     <TextView
-        android:id="@+id/BookPlatform"
+        android:id="@+id/bookRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
         android:text="TextView"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/BookPortrait"
-        app:layout_constraintTop_toBottomOf="@+id/BookGenre" />
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bookPortrait" />
+
+    <TextView
+        android:id="@+id/bookRatingNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bookRating" />
+
+    <CheckBox
+        android:id="@+id/bookStatusCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:checked="false"
+        android:text="Completed"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookAuthor" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

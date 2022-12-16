@@ -24,8 +24,12 @@
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/drawable/timer_on_hold.xml" value="0.2703125" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/drawable/users_icon.xml" value="0.168" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/drawable/watch_status_layout.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_book_fragment.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_book_list.xml" value="0.2427536231884058" />
+        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_create_game.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_edit_book.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_edit_game.xml" value="0.2" />
+        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_edit_tv.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_game_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_game_list.xml" value="0.2427536231884058" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_game_view.xml" value="0.25416666666666665" />
@@ -37,14 +41,18 @@
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_recycler_game.xml" value="0.2427536231884058" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_tv_list.xml" value="0.2427536231884058" />
+        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_tvfragment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_tvview.xml" value="0.2" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/activity_user_fragment.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/create_game_dialog_layout.xml" value="0.2" />
+        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/create_game_dialog_layout.xml" value="0.4" />
+        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/createbook_dialog.xml" value="0.253125" />
+        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/creategame_dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/createtv_dialog.xml" value="0.2076923076923077" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/fragment_game.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/game_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/recycler_book.xml" value="0.2427536231884058" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/recycler_game.xml" value="0.264" />
-        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/recycler_tv.xml" value="0.6" />
+        <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/recycler_tv.xml" value="0.264" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/recycler_user_group.xml" value="0.253125" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/layout/recycler_users.xml" value="0.253125" />
         <entry key="..\:/Users/josea/AndroidStudioProjects/MyEntertainmentList/app/src/main/res/menu/fragment_navigation.xml" value="0.25416666666666665" />

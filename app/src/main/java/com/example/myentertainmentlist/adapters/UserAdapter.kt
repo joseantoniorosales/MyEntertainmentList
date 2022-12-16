@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myentertainmentlist.R
 import com.example.myentertainmentlist.databinding.RecyclerUsersBinding
-import com.example.myentertainmentlist.room.Entities.User
+import com.example.myentertainmentlist.Entities.User
 
 class UserAdapter(private val userList: ArrayList<User>, private val context: Context) :
     RecyclerView.Adapter<UserAdapter.ViewHolder>() {

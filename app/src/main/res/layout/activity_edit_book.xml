@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".EditGameActivity">
+    tools:context=".EditBookActivity">
 
 
     <TextView
-        android:id="@+id/EditGameText"
+        android:id="@+id/EditBookText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="EDIT GAME"
+        android:text="EDIT BOOK"
         android:textColor="@color/white"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,17 +20,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/gameImageEdit"
+        android:id="@+id/BookImageEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditGameText"
+        app:layout_constraintTop_toBottomOf="@+id/EditBookText"
         tools:srcCompat="@tools:sample/avatars" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/gameStatusEditOutline"
+        android:id="@+id/BookStatusEditOutline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="225dp"
         android:layout_height="wrap_content"
@@ -39,12 +39,12 @@
         android:layout_marginTop="60dp"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="@color/textBox"
-        app:layout_constraintBottom_toTopOf="@+id/gameTitleEditOutline"
-        app:layout_constraintStart_toEndOf="@+id/gameImageEdit"
-        app:layout_constraintTop_toBottomOf="@+id/EditGameText">
+        app:layout_constraintBottom_toTopOf="@+id/BookTitleEditOutline"
+        app:layout_constraintStart_toEndOf="@+id/BookImageEdit"
+        app:layout_constraintTop_toBottomOf="@+id/EditBookText">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/gameStatusEditInput"
+            android:id="@+id/BookStatusEditInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white" />
@@ -53,7 +53,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/gameTitleEditOutline"
+        android:id="@+id/BookTitleEditOutline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -63,10 +63,10 @@
         app:boxBackgroundColor="@color/textBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameImageEdit">
+        app:layout_constraintTop_toBottomOf="@+id/BookImageEdit">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/gameTitleEditInput"
+            android:id="@+id/BookTitleEditInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white" />
@@ -75,20 +75,20 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/gamePlatformEditOutline"
+        android:id="@+id/BookAuthorEditOutline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:hint="Platform"
+        android:hint="Author"
         android:textColorHint="@color/white"
         app:boxBackgroundColor="@color/textBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameTitleEditOutline">
+        app:layout_constraintTop_toBottomOf="@+id/BookTitleEditOutline">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/gamePlatformEditInput"
+            android:id="@+id/BookAuthorEditInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white" />
@@ -96,7 +96,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/gameGenreEditOutline"
+        android:id="@+id/BookGenreEditOutline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -106,10 +106,10 @@
         app:boxBackgroundColor="@color/textBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gamePlatformEditOutline">
+        app:layout_constraintTop_toBottomOf="@+id/BookAuthorEditOutline">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/gameGenreEditInput"
+            android:id="@+id/BookGenreEditInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white" />
@@ -117,7 +117,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/gameRatingEditOutline"
+        android:id="@+id/BookRatingEditOutline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -128,10 +128,10 @@
         app:boxBackgroundColor="@color/textBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameGenreEditOutline">
+        app:layout_constraintTop_toBottomOf="@+id/BookGenreEditOutline">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/gameRatingEditInput"
+            android:id="@+id/BookRatingEditInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white" />
@@ -139,7 +139,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/butSaveEditGame"
+        android:id="@+id/butSaveEditBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -148,10 +148,10 @@
         android:text="SAVE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameRatingEditOutline" />
+        app:layout_constraintTop_toBottomOf="@+id/BookRatingEditOutline" />
 
     <Button
-        android:id="@+id/butCancelEditGame"
+        android:id="@+id/butCancelEditBook"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -159,7 +159,7 @@
         android:text="CANCEL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/butSaveEditGame" />
+        app:layout_constraintTop_toBottomOf="@+id/butSaveEditBook" />
 
     <Button
         android:id="@+id/button3"
@@ -167,8 +167,9 @@
         android:layout_height="wrap_content"
         android:text="CHANGE PHOTO"
         android:layout_marginLeft="10dp"
-        android:backgroundTint="@color/blue"
-        app:layout_constraintStart_toEndOf="@+id/gameImageEdit"
-        app:layout_constraintTop_toTopOf="@+id/gameImageEdit" />
+        android:backgroundTint="@color/green"
+        app:layout_constraintStart_toEndOf="@+id/BookImageEdit"
+        app:layout_constraintTop_toTopOf="@+id/BookImageEdit" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
