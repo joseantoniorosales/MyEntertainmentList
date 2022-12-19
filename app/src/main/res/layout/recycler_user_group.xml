@@ -45,7 +45,6 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:checked="false"
-        android:backgroundTint="@color/design_default_color_error"
         android:textOff="NoGroup"
         android:textOn="OnGroup"
         android:layout_marginRight="20dp"

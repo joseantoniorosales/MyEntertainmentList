@@ -53,13 +53,13 @@ class RegisterActivity : AppCompatActivity() {
                 setOf(
                     ItemModel(
                         ItemType.Camera,
-                        backgroundType = ShapeType.TYPE_ROUNDED_SQUARE,
-                        itemBackgroundColor = Color.rgb(37, 150, 190)
+                        backgroundType = ShapeType.TYPE_CIRCLE,
+                        itemBackgroundColor = Color.rgb(138, 189, 242)
                     ),
                     ItemModel(
                         ItemType.ImageGallery(MimeType.Image.All),
-                        backgroundType = ShapeType.TYPE_ROUNDED_SQUARE,
-                        itemBackgroundColor = Color.rgb(37, 150, 190)
+                        backgroundType = ShapeType.TYPE_CIRCLE,
+                        itemBackgroundColor = Color.rgb(138, 189, 242)
                     ),
                 )
             )
@@ -67,7 +67,7 @@ class RegisterActivity : AppCompatActivity() {
             setListType(PickerDialog.ListType.TYPE_LIST)
         }.setPickerCloseListener { type, uris ->
 
-            when(type) {
+            when (type) {
                 ItemType.Camera -> setChoosenImg(uris.first())
                 is ItemType.ImageGallery -> {
                     setChoosenImg(uris.first())
